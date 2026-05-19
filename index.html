@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heute - Mental Health Begleiter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="phone-shell" aria-label="Mobiler App-Prototyp">
+      <section class="app-screen">
+        <div class="status-bar" aria-hidden="true">
+          <span>14:23</span>
+          <span class="status-icons">
+            <span class="flight-icon">✈︎</span>
+            <span class="network-icon">5G</span>
+            <span class="battery-icon"></span>
+          </span>
+        </div>
+
+        <header class="top-bar">
+          <button class="crisis-button" type="button" data-open-crisis aria-label="Akute Krise Hilfe holen">
+            <span aria-hidden="true">☎</span>
+            Akute Krise
+          </button>
+          <button class="icon-button" type="button" aria-label="Einstellungen">
+            <span aria-hidden="true">⚙</span>
+          </button>
+        </header>
+
+        <section class="view active" id="today-view" data-view="today" aria-labelledby="today-title">
+          <div class="today-header">
+            <p class="welcome">Willkommen zurück, Max</p>
+            <h1 id="today-title">Was brauchst du gerade?</h1>
+            <p class="subline">Wähle aus, was gerade am besten passt. Danach bekommst du eine kurze Übung.</p>
+          </div>
+
+          <p class="section-label">Wie ist es gerade bei dir?</p>
+          <div class="need-grid" id="need-grid" aria-label="Bedarf auswählen"></div>
+
+          <article class="recommendation-card hidden" id="recommendation-card" aria-live="polite"></article>
+
+          <section class="quiet-section">
+            <div>
+              <h2>Später vertiefen</h2>
+              <p>Wenn du mehr Zeit hast, kannst du passende Inhalte lesen oder einen Kurs starten. Für jetzt zählt erstmal der nächste kleine Schritt.</p>
+            </div>
+            <button class="text-link" type="button" data-open-discover>Mehr entdecken</button>
+          </section>
+        </section>
+
+        <section class="view" id="help-view" data-view="help" aria-labelledby="help-title">
+          <div class="intro compact">
+            <h1 id="help-title">Schnelle Hilfe</h1>
+            <p class="subline">Kurze Übungen für den Moment, wenn du direkt etwas tun möchtest.</p>
+          </div>
+
+          <div class="filter-row" id="filter-row" aria-label="Übungen filtern"></div>
+          <div class="action-list" id="action-list"></div>
+        </section>
+
+        <section class="view" id="progress-view" data-view="progress" aria-labelledby="progress-title">
+          <div class="intro compact">
+            <h1 id="progress-title">Fortschritt</h1>
+            <p class="subline">Hier siehst du, welche Bereiche du durch kleine Schritte stärkst. Die Anzeige soll motivieren, nicht bewerten.</p>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span>Heute</span>
+              <strong id="today-count">0</strong>
+              <small id="today-label">kleine Schritte</small>
+            </article>
+            <article class="stat-card">
+              <span>Diese Woche</span>
+              <strong id="week-count">0</strong>
+              <small id="week-label">kleine Schritte</small>
+            </article>
+          </div>
+
+          <div class="progress-list" id="progress-list"></div>
+
+          <p class="progress-note">
+            Kompetenzaufbau passiert im Hintergrund. Entscheidend ist nicht die Zahl, sondern dass du passende kleine Schritte findest.
+          </p>
+        </section>
+
+        <section class="exercise-screen hidden" id="exercise-screen" aria-live="polite"></section>
+        <section class="overlay-screen hidden" id="discover-screen" aria-live="polite"></section>
+        <section class="overlay-screen hidden" id="detail-screen" aria-live="polite"></section>
+        <section class="overlay-screen hidden" id="crisis-screen" aria-live="polite"></section>
+
+        <nav class="bottom-nav" aria-label="Hauptnavigation">
+          <button class="nav-item active" type="button" data-tab="today" aria-label="Heute">
+            <span aria-hidden="true">⌂</span>
+            Heute
+          </button>
+          <button class="nav-item" type="button" data-tab="help" aria-label="Schnelle Hilfe">
+            <span aria-hidden="true">✦</span>
+            Schnelle Hilfe
+          </button>
+          <button class="nav-item" type="button" data-tab="progress" aria-label="Fortschritt">
+            <span aria-hidden="true">▣</span>
+            Fortschritt
+          </button>
+        </nav>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
