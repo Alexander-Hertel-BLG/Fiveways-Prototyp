@@ -50,42 +50,27 @@ button {
   min-height: 0;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: 12px;
 }
 
 .app-screen {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: min(calc(100vw - 16px), 375px);
-  height: min(calc(100dvh - 16px), 780px);
+  width: min(calc(100vw - 24px), 390px);
+  height: min(calc(100dvh - 24px), 780px);
   min-height: 0;
   overflow: hidden;
-  border: 4px solid #171717;
-  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 28px;
   background:
     radial-gradient(circle at 18% 6%, rgba(255, 226, 190, 0.72) 0, rgba(255, 226, 190, 0) 180px),
     radial-gradient(circle at 90% 14%, rgba(210, 239, 231, 0.86) 0, rgba(210, 239, 231, 0) 170px),
     linear-gradient(180deg, rgba(252, 244, 235, 0.94) 0%, rgba(251, 247, 241, 0) 260px),
     var(--bg);
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.34) inset,
-    0 20px 48px rgba(55, 66, 72, 0.2);
-}
-
-.app-screen::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  z-index: 20;
-  width: 82px;
-  height: 24px;
-  border-radius: 999px;
-  background: #141414;
-  transform: translateX(-50%);
-  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.08) inset;
-  pointer-events: none;
+    0 1px 0 rgba(255, 255, 255, 0.72) inset,
+    0 18px 42px rgba(83, 75, 68, 0.13);
 }
 
 .view,
@@ -114,52 +99,52 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 44px;
-  padding: 12px 30px 4px;
-  color: #151515;
-  font-size: 14px;
-  font-weight: 800;
+  height: 28px;
+  padding: 8px 22px 0;
+  color: rgba(56, 51, 48, 0.48);
+  font-size: 12px;
+  font-weight: 700;
   letter-spacing: 0;
 }
 
 .status-icons {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  color: #1e1e1e;
-  font-size: 13px;
+  gap: 7px;
+  color: rgba(56, 51, 48, 0.46);
+  font-size: 11px;
   letter-spacing: 0;
 }
 
 .battery-icon {
   position: relative;
   display: inline-block;
-  width: 24px;
-  height: 12px;
-  border: 1.8px solid #1d1d1d;
-  border-radius: 4px;
+  width: 19px;
+  height: 9px;
+  border: 1.4px solid currentColor;
+  border-radius: 3px;
 }
 
 .battery-icon::before {
   content: "";
   position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 16px;
-  height: 6px;
+  top: 1.5px;
+  left: 1.5px;
+  width: 13px;
+  height: 4px;
   border-radius: 2px;
-  background: #1d1d1d;
+  background: currentColor;
 }
 
 .battery-icon::after {
   content: "";
   position: absolute;
-  top: 3px;
-  right: -4px;
+  top: 2px;
+  right: -3px;
   width: 2px;
-  height: 5px;
+  height: 4px;
   border-radius: 0 2px 2px 0;
-  background: #1d1d1d;
+  background: currentColor;
 }
 
 .network-icon {
@@ -877,9 +862,9 @@ h3 {
   }
 
   .app-screen {
-    width: min(375px, calc(100vw - 56px));
+    width: min(390px, calc(100vw - 56px));
     height: min(780px, calc(100dvh - 56px));
-    border-radius: 40px;
+    border-radius: 30px;
   }
 
   .bottom-nav {
