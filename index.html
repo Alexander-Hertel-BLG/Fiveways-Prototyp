@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Heute - Mental Health Begleiter</title>
+    <title>fiveways - Mental Health Begleiter</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -28,10 +28,10 @@
           </button>
         </header>
 
-        <section class="view active" id="today-view" data-view="today" aria-labelledby="today-title">
+        <section class="view active" id="home-view" data-view="home" aria-labelledby="home-title">
           <div class="today-header">
             <p class="welcome">Willkommen zurück, Max</p>
-            <h1 id="today-title">Was brauchst du gerade?</h1>
+            <h1 id="home-title">Was brauchst du gerade?</h1>
             <p class="subline">Wähle aus, was gerade am besten passt. Danach bekommst du eine kurze Übung.</p>
           </div>
 
@@ -40,31 +40,45 @@
 
           <article class="recommendation-card hidden" id="recommendation-card" aria-live="polite"></article>
 
+          <section class="home-section" aria-labelledby="continue-title">
+            <div class="home-section-head">
+              <div>
+                <h2 id="continue-title">Fortsetzen</h2>
+                <p>Mach dort weiter, wo du aufgehört hast.</p>
+              </div>
+              <button class="text-link" type="button" data-open-help="continue">Alle anzeigen</button>
+            </div>
+            <div class="compact-list" id="home-continue-list"></div>
+          </section>
+
           <section class="quiet-section">
             <div>
-              <h2>Später vertiefen</h2>
-              <p>Wenn du mehr Zeit hast, kannst du passende Inhalte lesen oder einen Kurs starten. Für jetzt zählt erstmal der nächste kleine Schritt.</p>
+              <h2>Hilfe & Lernen</h2>
+              <p>Mini-Quests helfen schnell. Guides vertiefen ein Thema, wenn du mehr Zeit hast.</p>
             </div>
-            <button class="text-link" type="button" data-open-discover>Mehr entdecken</button>
+            <button class="text-link" type="button" data-open-help="mini">Alle Inhalte ansehen</button>
           </section>
         </section>
 
         <section class="view" id="help-view" data-view="help" aria-labelledby="help-title">
           <div class="intro compact">
-            <h1 id="help-title">Schnelle Hilfe</h1>
-            <p class="subline">Kurze Übungen für den Moment, wenn du direkt etwas tun möchtest.</p>
+            <h1 id="help-title">Hilfe & Lernen</h1>
+            <p class="subline">Finde kurze Mini-Quests für den Moment oder Guides zur Vertiefung.</p>
           </div>
 
-          <div class="filter-row" id="filter-row" aria-label="Übungen filtern"></div>
-          <div class="action-list" id="action-list"></div>
+          <div class="filter-row subtab-row" id="content-tabs" aria-label="Inhalte auswählen"></div>
+          <p class="section-subline" id="content-subline"></p>
+          <div class="filter-row" id="filter-row" aria-label="Inhalte filtern"></div>
+          <div class="action-list" id="content-list"></div>
         </section>
 
-        <section class="view" id="progress-view" data-view="progress" aria-labelledby="progress-title">
+        <section class="view" id="progress-view" data-view="progress" aria-labelledby="profile-title">
           <div class="intro compact">
-            <h1 id="progress-title">Fortschritt</h1>
-            <p class="subline">Hier siehst du, welche Bereiche du durch kleine Schritte stärkst. Die Anzeige soll motivieren, nicht bewerten.</p>
+            <h1 id="profile-title">Mein Profil</h1>
+            <p class="subline">Hier siehst du, was du bereits gemacht hast und welche Bereiche du durch kleine Schritte stärkst.</p>
           </div>
 
+          <h2 class="profile-section-title">Aktivitätsübersicht</h2>
           <div class="stats-grid">
             <article class="stat-card">
               <span>Heute</span>
@@ -81,27 +95,26 @@
           <div class="progress-list" id="progress-list"></div>
 
           <p class="progress-note">
-            Kompetenzaufbau passiert im Hintergrund. Entscheidend ist nicht die Zahl, sondern dass du passende kleine Schritte findest.
+            Mein Profil zeigt, was durch kleine Schritte entstanden ist. Es bewertet nicht.
           </p>
         </section>
 
         <section class="exercise-screen hidden" id="exercise-screen" aria-live="polite"></section>
-        <section class="overlay-screen hidden" id="discover-screen" aria-live="polite"></section>
         <section class="overlay-screen hidden" id="detail-screen" aria-live="polite"></section>
         <section class="overlay-screen hidden" id="crisis-screen" aria-live="polite"></section>
 
         <nav class="bottom-nav" aria-label="Hauptnavigation">
-          <button class="nav-item active" type="button" data-tab="today" aria-label="Heute">
+          <button class="nav-item active" type="button" data-tab="home" aria-label="Home">
             <span aria-hidden="true">⌂</span>
-            Heute
+            Home
           </button>
-          <button class="nav-item" type="button" data-tab="help" aria-label="Schnelle Hilfe">
+          <button class="nav-item" type="button" data-tab="help" aria-label="Hilfe und Lernen">
             <span aria-hidden="true">✦</span>
-            Schnelle Hilfe
+            Hilfe & Lernen
           </button>
-          <button class="nav-item" type="button" data-tab="progress" aria-label="Fortschritt">
+          <button class="nav-item" type="button" data-tab="progress" aria-label="Mein Profil">
             <span aria-hidden="true">▣</span>
-            Fortschritt
+            Mein Profil
           </button>
         </nav>
       </section>
